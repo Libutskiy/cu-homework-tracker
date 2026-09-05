@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CU Homework Tracker</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Vanilla CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header class="top-nav">
+            <div class="logo">
+                <h1><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="vertical-align: text-bottom; margin-right: 8px;">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>CU Homework Tracker</h1>
+            </div>
+            <div class="actions">
+                <button id="btn-trash" class="btn btn-secondary" title="Trash Bin">
+                    <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2">
+                            </path>
+                        </svg></span> Trash
+                </button>
+                <button id="btn-dashboard" class="btn btn-secondary hidden" title="Dashboard">
+                    <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg></span> Dashboard
+                </button>
+                <button id="btn-settings" class="btn btn-secondary" title="Settings">
+                    <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                            </path>
+                        </svg></span> Settings
+                </button>
+                <button id="btn-sync" class="btn btn-primary" title="Sync with LMS">
+                    <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                            <polyline points="3 3 3 8 8 8"></polyline>
+                        </svg></span> Sync
+                </button>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- Active Tasks -->
+            <section id="active-tasks-section" class="task-section">
+                <div class="section-header">
+                    <div class="header-left collapsable" id="toggle-active">
+                        <svg class="toggle-icon open" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <h2>Active Tasks</h2>
+                        <span id="active-count" class="badge">0</span>
+                    </div>
+                    <div class="header-actions" id="active-sort-controls">
+                        <select id="sort-select" class="sort-select">
+                            <option value="days_left">Days Left</option>
+                            <option value="progress">Progress</option>
+                        </select>
+                        <button id="btn-sort-dir" class="btn-icon" title="Toggle Sort Direction">
+                            <svg class="sort-dir-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="12 19 12 5"></polyline>
+                                <polyline points="5 12 12 5 19 12"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="active-tasks-list" class="task-list-container">
+                    <div id="active-tasks-normal" class="task-list"></div>
+                </div>
+            </section>
+
+            <!-- Uploaded Tasks -->
+            <section id="uploaded-tasks-section" class="task-section">
+                <div class="section-header">
+                    <div class="header-left collapsable" id="toggle-uploaded">
+                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <h2>Uploaded Tasks</h2>
+                        <span id="uploaded-count" class="badge">0</span>
+                    </div>
+                </div>
+                <div id="active-tasks-uploaded" class="task-list-container hidden">
+                    <!-- Cards will be injected here via JS -->
+                </div>
+            </section>
+
+            <!-- Skipped Tasks -->
+            <section id="skipped-tasks-section" class="task-section">
+                <div class="section-header">
+                    <div class="header-left collapsable" id="toggle-skipped">
+                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <h2>Skipped Tasks</h2>
+                        <span id="skipped-count" class="badge">0</span>
+                    </div>
+                </div>
+                <div id="active-tasks-skipped" class="task-list-container hidden">
+                    <!-- Cards will be injected here via JS -->
+                </div>
+            </section>
+
+            <!-- Archived Tasks -->
+            <section id="archived-tasks-section" class="task-section">
+                <div class="section-header">
+                    <div class="header-left collapsable" id="toggle-archive">
+                        <svg class="toggle-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <h2>Archived Tasks</h2>
+                        <span id="archive-count" class="badge">0</span>
+                    </div>
+                    <button id="btn-clear-archive" class="btn btn-danger btn-small">Clear Archive</button>
+                </div>
+                <div id="archived-tasks-list" class="task-list hidden">
+                    <!-- Cards will be injected here via JS -->
+                </div>
+            </section>
+
+            <!-- Trash Tasks -->
+            <section id="trash-tasks-section" class="task-section hidden">
+                <div class="section-header">
+                    <div class="header-left">
+                        <h2>Trash Bin</h2>
+                        <span id="trash-count" class="badge">0</span>
+                    </div>
+                    <button id="btn-empty-trash" class="btn btn-danger btn-small">Empty Trash</button>
+                </div>
+                <div id="trash-tasks-list" class="task-list">
+                    <!-- Cards will be injected here via JS -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal hidden">
+            <div class="modal-content glass">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button id="btn-close-settings" class="btn-icon"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="theme-select">Theme</label>
+                        <select id="theme-select">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="amoled">AMOLED Black</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="archive-delay">
+                            Archive Delay (days after deadline)
+                            <span class="tooltip-icon"
+                                data-tooltip="Number of days to keep a task active after its deadline passes before moving it to the archive.">i</span>
+                        </label>
+                        <input type="number" id="archive-delay" min="0" value="0">
+                    </div>
+
+                    <div class="settings-group">
+                        <h3 class="group-title">Filtering Rules</h3>
+
+                        <div class="form-group">
+                            <label for="filter-mode">
+                                Filter Mode
+                                <span class="tooltip-icon"
+                                    data-tooltip="Whitelist only shows matching tasks. Blacklist hides matching tasks.">i</span>
+                            </label>
+                            <select id="filter-mode">
+                                <option value="whitelist">Whitelist (Show Only)</option>
+                                <option value="blacklist">Blacklist (Hide)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="filter-match-rule">
+                                Match Rule
+                                <span class="tooltip-icon"
+                                    data-tooltip="Exact match requires the exact string. Partial match checks if the string is part of the task/subject name.">i</span>
+                            </label>
+                            <select id="filter-match-rule">
+                                <option value="exact">Exact Match</option>
+                                <option value="partial">Partial Match</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjects-list">
+                                Subjects (comma separated)
+                                <span class="tooltip-icon"
+                                    data-tooltip="List of subject names to filter by (e.g. History, Biology).">i</span>
+                            </label>
+                            <textarea id="subjects-list" placeholder="e.g. History, Biology" rows="2"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="task-names-list">
+                                Task Names (comma separated)
+                                <span class="tooltip-icon"
+                                    data-tooltip="List of specific task names to filter by.">i</span>
+                            </label>
+                            <textarea id="task-names-list" placeholder="e.g. Essay, Final Project" rows="2"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-cancel-settings" class="btn btn-secondary">Cancel</button>
+                    <button id="btn-save-settings" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/static/js/main.js"></script>
+</body>
+
+</html>
