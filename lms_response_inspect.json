@@ -1,0 +1,354 @@
+[
+  {
+    "id": 1625523,
+    "state": "review",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": false,
+    "extraScore": null,
+    "createdAt": "2026-04-27T15:53:26.825393+00:00",
+    "startedAt": "2026-05-02T14:18:45.208219+00:00",
+    "submitAt": "2026-05-11T18:51:36.206258+00:00",
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-05-11T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 63110,
+      "name": "Итоговый проект",
+      "type": "coding",
+      "maxScore": 10,
+      "startDate": "2026-04-26T21:00:00+00:00",
+      "deadline": "2026-05-11T19:00:00+00:00",
+      "activity": {
+        "id": 2662,
+        "name": "Активность без веса",
+        "weight": 0,
+        "isLateDaysEnabled": false
+      }
+    },
+    "course": {
+      "id": 836,
+      "name": "⚫️ Введение в экономику. Продвинутый уровень",
+      "isArchived": true
+    },
+    "theme": {
+      "id": 10544,
+      "name": "Итоговый проект. Промежуточный этап"
+    },
+    "longread": {
+      "id": 20164,
+      "name": "Проект"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  },
+  {
+    "id": 1976363,
+    "state": "backlog",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": false,
+    "extraScore": null,
+    "createdAt": "2026-09-07T07:01:36.969264+00:00",
+    "startedAt": null,
+    "submitAt": null,
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-09-11T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 79663,
+      "name": "Бонусная активность. Неделя 1",
+      "type": "coding",
+      "maxScore": 1,
+      "startDate": "2026-09-07T07:00:00+00:00",
+      "deadline": "2026-09-11T19:00:00+00:00",
+      "activity": {
+        "id": 3963,
+        "name": "Бонусная активность",
+        "weight": 0.15,
+        "isLateDaysEnabled": false
+      }
+    },
+    "course": {
+      "id": 1175,
+      "name": "🔵 Теория вероятностей. Базовый уровень",
+      "isArchived": false
+    },
+    "theme": {
+      "id": 17682,
+      "name": "Неделя 1: Множества и операции над ними"
+    },
+    "longread": {
+      "id": 31629,
+      "name": "Бонусная активность"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  },
+  {
+    "id": 1971508,
+    "state": "backlog",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": true,
+    "extraScore": null,
+    "createdAt": "2026-09-07T07:01:28.378694+00:00",
+    "startedAt": null,
+    "submitAt": null,
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-09-13T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 79261,
+      "name": "ДЗ 1. Основные термины",
+      "type": "coding",
+      "maxScore": 10,
+      "startDate": "2026-09-07T07:00:00+00:00",
+      "deadline": "2026-09-13T19:00:00+00:00",
+      "activity": {
+        "id": 3818,
+        "name": "Домашнее задание",
+        "weight": 0.4,
+        "isLateDaysEnabled": true
+      }
+    },
+    "course": {
+      "id": 1253,
+      "name": "🔴 Введение в искусственный интеллект",
+      "isArchived": false
+    },
+    "theme": {
+      "id": 12249,
+      "name": "Неделя 1: Основные термины"
+    },
+    "longread": {
+      "id": 31543,
+      "name": "Домашнее задание"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  },
+  {
+    "id": 1962675,
+    "state": "backlog",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": false,
+    "extraScore": null,
+    "createdAt": "2026-09-07T07:00:31.71207+00:00",
+    "startedAt": null,
+    "submitAt": null,
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-09-16T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 74513,
+      "name": "Seminar 1. Week 1",
+      "type": "coding",
+      "maxScore": 10,
+      "startDate": "2026-09-07T07:00:00+00:00",
+      "deadline": "2026-09-16T19:00:00+00:00",
+      "activity": {
+        "id": 4291,
+        "name": "Аудиторная активность",
+        "weight": 0.25,
+        "isLateDaysEnabled": false
+      }
+    },
+    "course": {
+      "id": 1374,
+      "name": "Английский язык 205S3",
+      "isArchived": false
+    },
+    "theme": {
+      "id": 14428,
+      "name": "Week 1"
+    },
+    "longread": {
+      "id": 24576,
+      "name": "Lesson 1: Introduction: Why “Englishes” and not just “English”? — 1"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  },
+  {
+    "id": 1965973,
+    "state": "inProgress",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": true,
+    "extraScore": null,
+    "createdAt": "2026-09-07T07:00:39.772914+00:00",
+    "startedAt": "2026-09-07T07:10:40.942453+00:00",
+    "submitAt": null,
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-09-16T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 74494,
+      "name": "HW. Week 1",
+      "type": "coding",
+      "maxScore": 10,
+      "startDate": "2026-09-07T07:00:00+00:00",
+      "deadline": "2026-09-16T19:00:00+00:00",
+      "activity": {
+        "id": 4290,
+        "name": "Домашнее задание",
+        "weight": 0.2,
+        "isLateDaysEnabled": true
+      }
+    },
+    "course": {
+      "id": 1374,
+      "name": "Английский язык 205S3",
+      "isArchived": false
+    },
+    "theme": {
+      "id": 14428,
+      "name": "Week 1"
+    },
+    "longread": {
+      "id": 30605,
+      "name": "Homework"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  },
+  {
+    "id": 1960058,
+    "state": "backlog",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": false,
+    "extraScore": null,
+    "createdAt": "2026-09-07T07:00:16.297035+00:00",
+    "startedAt": null,
+    "submitAt": null,
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-09-16T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 76786,
+      "name": "ДЗ 1. Введение в финансовую и управленческую отчётность",
+      "type": "coding",
+      "maxScore": 10,
+      "startDate": "2026-09-07T07:00:00+00:00",
+      "deadline": "2026-09-16T19:00:00+00:00",
+      "activity": {
+        "id": 3418,
+        "name": "Домашние задания",
+        "weight": 0.15,
+        "isLateDaysEnabled": false
+      }
+    },
+    "course": {
+      "id": 1229,
+      "name": "Основы финансовой и управленческой отчетности",
+      "isArchived": false
+    },
+    "theme": {
+      "id": 11817,
+      "name": "Неделя 1: Введение в финансовую и управленческую отчётность"
+    },
+    "longread": {
+      "id": 30970,
+      "name": "Домашнее задание"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  },
+  {
+    "id": 1965841,
+    "state": "backlog",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": false,
+    "extraScore": null,
+    "createdAt": "2026-09-07T07:00:39.439466+00:00",
+    "startedAt": null,
+    "submitAt": null,
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-09-16T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 74514,
+      "name": "Seminar 2. Week 1",
+      "type": "coding",
+      "maxScore": 10,
+      "startDate": "2026-09-07T07:00:00+00:00",
+      "deadline": "2026-09-16T19:00:00+00:00",
+      "activity": {
+        "id": 4291,
+        "name": "Аудиторная активность",
+        "weight": 0.25,
+        "isLateDaysEnabled": false
+      }
+    },
+    "course": {
+      "id": 1374,
+      "name": "Английский язык 205S3",
+      "isArchived": false
+    },
+    "theme": {
+      "id": 14428,
+      "name": "Week 1"
+    },
+    "longread": {
+      "id": 30604,
+      "name": "Lesson 2: Introduction: Why “Englishes” and not just “English”? — 2"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  },
+  {
+    "id": 1988670,
+    "state": "backlog",
+    "score": null,
+    "scoreSkillLevel": null,
+    "isLateDaysEnabled": false,
+    "extraScore": null,
+    "createdAt": "2026-09-07T09:29:41.962971+00:00",
+    "startedAt": null,
+    "submitAt": null,
+    "rejectAt": null,
+    "evaluateAt": null,
+    "deadline": "2026-09-18T19:00:00+00:00",
+    "lateDays": null,
+    "exercise": {
+      "id": 77748,
+      "name": "Перезачет",
+      "type": "coding",
+      "maxScore": 10,
+      "startDate": "2026-09-06T21:00:00+00:00",
+      "deadline": "2026-09-18T19:00:00+00:00",
+      "activity": {
+        "id": 4751,
+        "name": "Активность без веса",
+        "weight": 0,
+        "isLateDaysEnabled": false
+      }
+    },
+    "course": {
+      "id": 1596,
+      "name": "Физическая культура. 2 курс",
+      "isArchived": false
+    },
+    "theme": {
+      "id": 17582,
+      "name": "Перезачет"
+    },
+    "longread": {
+      "id": 31251,
+      "name": "Перезачет"
+    },
+    "reviewer": null,
+    "quizSessionId": null
+  }
+]

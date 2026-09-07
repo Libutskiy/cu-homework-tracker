@@ -8,6 +8,8 @@ class TaskBase(BaseModel):
     subject: str
     deadline: datetime
     ld_applied: int = 0
+    weight: Optional[float] = None
+    url: Optional[str] = None
     
 class TaskCreate(TaskBase):
     pass

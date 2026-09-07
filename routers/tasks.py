@@ -25,6 +25,13 @@ async def sync_tasks(request: Request, db: Session = Depends(get_db)):
     # Fetch tasks
     lms_tasks = await fetch_lms_tasks(cookie_str)
     
+    try:
+        import json
+        with open("lms_response_inspect.json", "w", encoding="utf-8") as f:
+            json.dump(lms_tasks, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print("Could not save LMS response for inspection:", e)
+        
     synced_task_ids = set()
     
     for lms_task in lms_tasks:
@@ -45,7 +52,7 @@ async def sync_tasks(request: Request, db: Session = Depends(get_db)):
         exercise = lms_task.get("exercise") or {}
         exercise_name = exercise.get("name") if isinstance(exercise, dict) else None
         
-        title = theme_name or longread_name or exercise_name or "Untitled"
+        title = exercise_name or theme_name or longread_name or "Untitled"
         deadline_str = lms_task.get("deadline")
         
         deadline = None
@@ -64,12 +71,29 @@ async def sync_tasks(request: Request, db: Session = Depends(get_db)):
         if ld_applied is None:
             ld_applied = 0
             
+        activity = exercise.get("activity") if isinstance(exercise, dict) else {}
+        weight = activity.get("weight") if isinstance(activity, dict) else None
+            
+        course_id = lms_task.get("course", {}).get("id") if isinstance(lms_task.get("course"), dict) else None
+        theme_id = lms_task.get("theme", {}).get("id") if isinstance(lms_task.get("theme"), dict) else None
+        longread_id = lms_task.get("longread", {}).get("id") if isinstance(lms_task.get("longread"), dict) else None
+        exercise_id = exercise.get("id") if isinstance(exercise, dict) else None
+        
+        task_url = None
+        if course_id and theme_id:
+            if longread_id:
+                task_url = f"https://my.centraluniversity.ru/learn/courses/view/actual/{course_id}/themes/{theme_id}/longreads/{longread_id}"
+            elif exercise_id:
+                task_url = f"https://my.centraluniversity.ru/learn/courses/view/actual/{course_id}/themes/{theme_id}/exercises/{exercise_id}"
+            
         db_task = db.query(models.TaskModel).filter(models.TaskModel.id == task_id).first()
         if db_task:
             db_task.title = title
             db_task.subject = subject
             db_task.deadline = deadline
             db_task.ld_applied = ld_applied
+            db_task.weight = weight
+            db_task.url = task_url
         else:
             # Create new task
             db_task = models.TaskModel(
@@ -77,7 +101,9 @@ async def sync_tasks(request: Request, db: Session = Depends(get_db)):
                 title=title,
                 subject=subject,
                 deadline=deadline,
-                ld_applied=ld_applied
+                ld_applied=ld_applied,
+                weight=weight,
+                url=task_url
             )
             db.add(db_task)
         

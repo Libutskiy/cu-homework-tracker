@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, Boolean, DateTime
+from sqlalchemy import Column, String, Integer, Boolean, DateTime, Float
 from database import Base
 import datetime
 
@@ -10,6 +10,8 @@ class TaskModel(Base):
     subject = Column(String, index=True)
     deadline = Column(DateTime)
     ld_applied = Column(Integer, default=0)
+    weight = Column(Float, nullable=True)
+    url = Column(String, nullable=True)
     
     # Local State
     completed_items = Column(Integer, default=0)
